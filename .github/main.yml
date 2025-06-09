@@ -1,0 +1,42 @@
+name: Run Unit Tests on Push 
+
+on:
+  push: 
+    branches:
+      - master 
+      - lab5_github_actions_* 
+
+jobs:
+  test:
+    name: Run Python Unit Tests 
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest] 
+        python-version: [3.x] 
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout repository 
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }} 
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies 
+      run: |
+        # Если у вас есть файл requirements.txt, раскомментируйте следующую строку
+        # python -m pip install -r requirements.txt
+        python -m pip install --upgrade pip
+
+    - name: Check Python path (for debugging imports)
+      run: |
+        python -c "import sys; print(sys.path)"
+
+    - name: Run Unit Tests 
+      run: |
+        # Переходим в директорию проекта, если ваша .github/workflows не в корне
+        # cd geometric_lib # Раскомментируйте, если ваш workflow лежит не в корне репозитория geometric_lib
+        python -m unittest discover tests
