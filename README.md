@@ -1,71 +1,50 @@
-# case-converter README
+# VS Code Plugin: Case Converter
 
-This is the README for your extension "case-converter". After writing up a brief description, we recommend including the following sections.
+## Авторство
+* **Автор:** Еремченко Владимир Алексеевич, Группа: М3309
 
-## Features
+## Описание плагина
+Плагин "Case Converter" для Visual Studio Code предоставляет набор удобных команд для быстрого изменения регистра выделенного текста в активном редакторе. Это значительно упрощает работу с кодом, особенно при необходимости приводить переменные или функции к определенному стилю именования (camelCase, snake_case, kebab-case).
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Возможности
 
-For example if there is an image subfolder under your extension project workspace:
+Плагин добавляет следующие команды, доступные через палитру команд (Ctrl+Shift+P):
 
-\!\[feature X\]\(images/feature-x.png\)
+1.  **Case Converter: В ВЕРХНИЙ РЕГИСТР**
+    * Преобразует выделенный текст в заглавные буквы (UPPERCASE).
+    * Пример: `Hello world` -> `HELLO WORLD`
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+2.  **Case Converter: в нижний регистр**
+    * Преобразует выделенный текст в строчные буквы (lowercase).
+    * Пример: `Hello World` -> `hello world`
 
-## Requirements
+3.  **Case Converter: в camelCase**
+    * Преобразует выделенный текст в стиль `camelCase`.
+    * Пример: `hello_world` -> `helloWorld`; `Hello World` -> `helloWorld`
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+4.  **Case Converter: в snake_case**
+    * Преобразует выделенный текст в стиль `snake_case`.
+    * Пример: `helloWorld` -> `hello_world`; `Hello World` -> `hello_world`
 
-## Extension Settings
+5.  **Case Converter: в kebab-case**
+    * Преобразует выделенный текст в стиль `kebab-case`.
+    * Пример: `helloWorld` -> `hello-world`; `Hello World` -> `hello-world`
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Установка и использование
 
-For example:
+### Установка (для пользователя)
+1. Откройте Visual Studio Code.
+2. Перейдите в раздел "Расширения" (Ctrl+Shift+X).
+3. В строке поиска наберите "Case Converter".
+4. Нажмите кнопку "Установить" рядом с плагином (после публикации).
 
-This extension contributes the following settings:
+### Использование
+1. Откройте любой текстовый файл в VS Code.
+2. Выделите часть текста, регистр которого вы хотите изменить.
+3. Откройте палитру команд (Ctrl+Shift+P).
+4. Начните набирать "Case Converter" и выберите желаемую команду из списка.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## История изменений проекта
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+```bash
+* 03da418 (HEAD -> master, origin/master) Initial commit
